@@ -38,7 +38,7 @@ rfetch http://localhost:8080/ -m PUT -H myheader:myvalue -H myotherheader:myothe
 ## Compilation
 First, clone this repository
 ```bash
-git clone https://github.com/Moritisimor/rfetch
+git clone https://github.com/shawarma10/rfetch
 ```
 
 Then, cd into the source code folder
