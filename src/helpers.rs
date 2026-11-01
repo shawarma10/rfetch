@@ -13,11 +13,13 @@ pub async fn make_query_params(f: &Flags) -> anyhow::Result<Vec<(String, String)
         }
 
         match param.split_once(":") {
-            Some((k, v)) => {
-                params.push((k.to_string(), v.to_string()));
-            }
-
-            None => bail!("Invalid query parameter format (expected 'key:value').".red()),
+            Some((k, v)) => params.push((k.to_string(), v.to_string())),
+            None => match param.split_once("=") {
+                Some((k, v)) => params.push((k.to_string(), v.to_string())),
+                None => bail!(
+                    "Invalid query parameter format (expected 'key:value' or 'key=value').".red()
+                ),
+            },
         }
     }
 
