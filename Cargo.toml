@@ -2,6 +2,12 @@
 name = "rfetch"
 version = "1.6.1"
 edition = "2024"
+description = "A simple, ergonomic CLI HTTP client - like curl, but with clearer flags and prettier output"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/shawarma10/rfetch"
+readme = "README.md"
+keywords = ["http", "cli", "curl", "client", "rest"]
+categories = ["command-line-utilities"]
 
 [profile.release]
 opt-level = "z"
