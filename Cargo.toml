@@ -1,6 +1,6 @@
 [package]
 name = "rfetch-cli"
-version = "1.6.1"
+version = "1.6.2"
 edition = "2024"
 description = "A simple, ergonomic CLI HTTP client - like curl, but with clearer flags and prettier output"
 license = "GPL-3.0-or-later"
