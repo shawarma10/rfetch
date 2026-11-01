@@ -1,6 +1,6 @@
 [package]
 name = "rfetch"
-version = "1.5.0"
+version = "1.6.0"
 edition = "2024"
 
 [profile.release]
@@ -11,7 +11,7 @@ strip = true
 panic = "abort"
 
 [dependencies]
-tokio = { version = "1.48.0", features = ["macros"]}
+tokio = { version = "1.48.0", features = ["macros"] }
 reqwest = "0"
 clap = { version = "4.5.53", features = ["derive"] }
 serde_json = "1"

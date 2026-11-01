@@ -30,7 +30,7 @@ pub async fn make_headers(f: &Flags) -> anyhow::Result<reqwest::header::HeaderMa
     let mut headers = reqwest::header::HeaderMap::new();
     headers.append(
         reqwest::header::USER_AGENT,
-        reqwest::header::HeaderValue::from_static("rfetch/1.5.0"),
+        reqwest::header::HeaderValue::from_static("rfetch/1.6.0"),
     );
 
     if f.json {

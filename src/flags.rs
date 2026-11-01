@@ -14,7 +14,7 @@ pub struct Flags {
     #[arg(short, long)]
     pub body: Option<String>,
 
-    /// Output the request body to a file
+    /// Output the response body to a file
     #[arg(short, long)]
     pub output: Option<String>,
 
