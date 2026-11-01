@@ -12,9 +12,9 @@ pub async fn make_query_params(f: &Flags) -> anyhow::Result<Vec<(String, String)
             continue;
         }
 
-        match param.split_once(":") {
+        match param.split_once("=") {
             Some((k, v)) => params.push((k.to_string(), v.to_string())),
-            None => match param.split_once("=") {
+            None => match param.split_once(":") {
                 Some((k, v)) => params.push((k.to_string(), v.to_string())),
                 None => bail!(
                     "Invalid query parameter format (expected 'key:value' or 'key=value').".red()
@@ -30,7 +30,7 @@ pub async fn make_headers(f: &Flags) -> anyhow::Result<reqwest::header::HeaderMa
     let mut headers = reqwest::header::HeaderMap::new();
     headers.append(
         reqwest::header::USER_AGENT,
-        reqwest::header::HeaderValue::from_static("rfetch/1.6.0"),
+        reqwest::header::HeaderValue::from_static("rfetch/1.6.1"),
     );
 
     if f.json {
