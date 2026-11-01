@@ -41,7 +41,7 @@ pub struct Flags {
 
 impl Flags {
     pub fn extract_method(&self) -> anyhow::Result<reqwest::Method> {
-        match &*self.method.to_lowercase() {
+        match self.method.to_lowercase().as_str() {
             "post" => Ok(reqwest::Method::POST),
             "get" => Ok(reqwest::Method::GET),
             "put" => Ok(reqwest::Method::PUT),
