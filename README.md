@@ -7,17 +7,17 @@ RFetch is a simple but ergonomic CLI-Based HTTP Client. Functionally, it is simi
 ## Examples
 To send a simple GET Request without a body:
 ```bash
-rfetch http://localhost:8080/
+rfetch-cli http://localhost:8080/
 ```
 
 To send a POST request with a JSON body: 
 ```bash
-rfetch http://localhost:8080/ -m POST -j -b '{"mykey": "MyValue"}'
+rfetch-cli http://localhost:8080/ -m POST -j -b '{"mykey": "MyValue"}'
 ```
 
 To send a PUT request with headers:
 ```bash
-rfetch http://localhost:8080/ -m PUT -H myheader:myvalue -H myotherheader:myothervalue
+rfetch-cli http://localhost:8080/ -m PUT -H myheader:myvalue -H myotherheader:myothervalue
 ```
 
 ## Output
@@ -35,10 +35,15 @@ rfetch http://localhost:8080/ -m PUT -H myheader:myvalue -H myotherheader:myothe
 |----------|----------|----------|----------|----------|---------------|------------------|----------------------|
 | JSON     | Body     | Method   | Header   | Output   | Debug/Verbose | Only prints body | Sets Query parameter |
 
-## Compilation
+## Installation with crates.io
+```bash
+cargo install rfetch-cli
+```
+
+## Compilation from source
 First, clone this repository
 ```bash
-git clone https://github.com/shawarma10/rfetch
+git clone https://github.com/shawarma10/rfetch 
 ```
 
 Then, cd into the source code folder
@@ -51,4 +56,4 @@ And finally compile it with cargo
 cargo build -r
 ```
 
-The binary will be in `rfetch/target/release` and is called `rfetch`
+The binary will be in `rfetch/target/release` and is called `rfetch-cli`
